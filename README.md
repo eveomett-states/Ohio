@@ -21,12 +21,6 @@ Obtain the following data from Restricting Data Hub
 
 [2016 election data](https://redistrictingdatahub.org/dataset/vest-2016-ohio-precinct-and-election-results/)**:**  VEST 2016 ohio precinct and election results
 
-# Ohio Election Shapefile
-This shapefile was compiled and processed by members of the Voting Rights Data Institute (VRDI) and the Metric Geometry and Gerrymandering Group (MGGG). VRDI was a 2018 summer intensive sponsored by MGGG at Tufts and MIT, with major support from a Bose Research Grant at MIT and from the Jonathon M. Tisch College of Civic Life at Tufts.
-
-## Sources
-Raw data for Ohio's precinct boundaries was sourced from election and other county officials and processed by members of MGGG and students at VRDI. For more information on the sourcing of this data, please refer to the Metric Geometry and Gerrymandering Group's [Ohio Precincts Github repository](https://github.com/mggg/ohio-precincts). Election data come the [Ohio Secretary of State](https://www.sos.state.oh.us/elections/election-results-and-data/2016-official-elections-results/) and the [MIT Election Data Science Lab](https://electionlab.mit.edu). Demographic data were downloaded at the census block level from [IPUMS NHGIS](https://www.nhgis.org).
-
 ## Preprocessing
 Demographic data were aggregated from the block level using MGGG’s proration software [maup](https://github.com/mggg/maup). Congressional, house, and senate district IDs were assigned to precincts also using this package.
 
