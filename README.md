@@ -1,6 +1,11 @@
-# ohio Election Shapefile
+# License
+This data was generated using data from the Redistricting Data Hub.  Any use of this project shall also comply with restrictions on use of data and attribution requirements set forth in the Redistricting Data Hub terms and conditions found at: [https://redistrictingdatahub.org/terms-and-conditions/](https://redistrictingdatahub.org/terms-and-conditions/).
 
-This shapefile was processed by Professor Ellen Veomett and her student Ananya Agarwal.
+Use of this project is further governed by the terms of the [Creative Commons Attribution Noncommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode.en)
+
+# Ohio Json
+
+This shapefile was processed by Professor Ellen Veomett and her student Ananya Agarwal using the corresponding jupyter notebook.  As part of the cleaning process, precincts were nested within counties and small rook adjacencies (under 30 m) were changed to queen adjacencies.
 
 # **Sources**
 @author: eveomett AI for Redistricting, USF All data retrieved 05/29/24:
@@ -21,59 +26,68 @@ Obtain the following data from Restricting Data Hub
 
 [2016 election data](https://redistrictingdatahub.org/dataset/vest-2016-ohio-precinct-and-election-results/)**:**  VEST 2016 ohio precinct and election results
 
+[2020 County data](https://redistrictingdatahub.org/dataset/ohio-county-pl-94171-2020/): from 2020 Census Redistricting Data (P.L. 94-171) Shapefiles
+
 ## Preprocessing
-Demographic data were aggregated from the block level using MGGG’s proration software [maup](https://github.com/mggg/maup). Congressional, house, and senate district IDs were assigned to precincts also using this package.
+Data were cleaned and aggregated in the corresponding jupyter notebook using MGGG’s python library [maup](https://github.com/mggg/maup). 
 
 ## Metadata
-* `CNTYFIPS`: County FIPS code
-* `COUNTY`: County name
-* `CODE`: County-level precinct code
-* `PRECODE`: County FIPS and precinct code (precinct unique identifier)
-* `PRECINCT`: Precinct name
-* `PRENAME`: Precinct name from tabular results
-* `TOTREG16`: Total registered voters on November 8, 2016
-* `TOTVOTE16`: Total votes cast on November 8, 2016
-* `TURNOUT16`: Turnout proportion on November 8, 2016
-* `PRES16R`: Number of votes for 2016 Republican presidential candidate
-* `PRES16D`: Number of votes for 2016 Democratic presidential candidate
-* `PRES16L`: Number of votes for 2016 Libertarian presidential candidate
-* `PRES16G`: Number of votes for 2016 Green Party presidential candidate
-* `SEN16R`: Number of votes for 2016 Republican senate candidate
-* `SEN16D`: Number of votes for 2016 Democratic senate candidate
-* `USH16R`: Number of votes for 2016 Republican US congressional candidates
-* `USH16D`: Number of votes for 2016 Democratic US congressional candidates
-* `SSEN16R`:  Number of votes for 2016 Republican state senate candidates
-* `SSEN16D`:  Number of votes for 2016 Democratic state senate candidates
-* `STH16D`:  Number of votes for 2016 Republican state house candidates
-* `STH16R`:  Number of votes for 2016 Democratic state house candidates
-* `TOTPOP`: Total population 
-* `NH_WHITE`: White, non-hispanic, population
-* `NH_BLACK`: Black, non-hispanic, population
-* `NH_AMIN`: American Indian and Alaska Native, non-hispanic, population
-* `NH_ASIAN`: Asian, non-hispanic, population
-* `NH_NHPI`: Native Hawaiian and Pacific Islander, non-hispanic, population
-* `NH_OTHER`: Other race, non-hispanic, population
-* `NH_2MORE`: Two or more races, non-hispanic, population
-* `HISP`: Hispanic population
-* `H_WHITE`: White, hispanic, population
-* `H_BLACK`: Black, hispanic, population
-* `H_AMIN`: American Indian and Alaska Native, hispanic, population
-* `H_ASIAN`: Asian, hispanic, population
-* `H_NHPI`: Native Hawaiian and Pacific Islander, hispanic, population
-* `H_OTHER`: Other race, hispanic, population
-* `H_2MORE`: Two or more races, hispanic, population
-* `VAP`: Total voting age population
-* `HVAP`: Hispanic voting age population
-* `WVAP`: White, non-hispanic, voting age population
-* `BVAP`: Black, non-hispanic, voting age population
-* `AMINVAP`: American Indian and Alaska Native, non-hispanic, voting age population
-* `ASIANVAP`: Asian, non-hispanic, voting age population
-* `NHPIVAP`: Native Hawaiian and Pacific Islander, non-hispanic, voting age population
-* `OTHERVAP`: Other race, non-hispanic, voting age population
-* `2MOREVAP`: Two or more races, non-hispanic, voting age population
-* `CD`: US congressional district ID
-* `SEND`: State Senate district ID
-* `HDIST`: State House district ID
+- `STATEFP20`: State FIPS code
+- `COUNTYFP20`: County FIPS code
+- `VTDST20`: Voting tabulation district FIPS code
+- `GEOID20`: Geographical ID in 2022 enacted congressional map
+- `NAME20`: Voting tabulation district name
+- `CD`: Congressional district ID
+- `SEND`: State Senate district for 2021 State Senate Adopted Plan
+- `HDIST`: State House district for 2024 State House of Representatives Districts Plan
+- `TOTPOP`: Total population in 2020 Census
+- `NH_WHITE`: White, non-hispanic, population in 2020 Census
+- `NH_BLACK`: Black, non-hispanic, population in 2020 Census
+- `NH_AMIN`: American Indian and Alaska Native, non-hispanic, population in 2020 Census
+- `NH_ASIAN`: Asian, non-hispanic, population in 2020 Census
+- `NH_NHPI`: Native Hawaiian and Pacific Islander, non-hispanic, population in 2020 Census
+- `NH_OTHER`: Other race, non-hispanic, population in 2020 Census
+- `NH_2MORE`: Two or more races, non-hispanic, population in 2020 Census
+- `HISP`: Hispanic population in 2020 Census
+- `H_WHITE`: White, hispanic, population in 2020 Census
+- `H_BLACK`: Black, hispanic, population in 2020 Census
+- `H_AMIN`: American Indian and Alaska Native, hispanic, population in 2020 Census
+- `H_ASIAN`: Asian, hispanic, population in 2020 Census
+- `H_NHPI`: Native Hawaiian and Pacific Islander, hispanic, population in 2020 Census
+- `H_OTHER`: Other race, hispanic, population in 2020 Census
+- `H_2MORE`: Two or more races, hispanic, population in 2020 Census
+- `VAP`: Total voting age population in 2020 Census
+- `HVAP`: Hispanic voting age population in 2020 Census
+- `WVAP`: White, non-hispanic, voting age population in 2020 Census
+- `BVAP`: Black, non-hispanic, voting age population in 2020 Census
+- `AMINVAP`: American Indian and Alaska Native, non-hispanic, voting age population in 2020 Census
+- `ASIANVAP`: Asian, non-hispanic, voting age population in 2020 Census
+- `NHPIVAP`: Native Hawaiian and Pacific Islander, non-hispanic, voting age population in 2020 Census
+- `OTHERVAP`: Other race, non-hispanic, voting age population in 2020 Census
+- `2MOREVAP`: Two or more races, non-hispanic, voting age population in 2020 Census
+- `ATG18D`: Number of votes for 2018 Democratic attorney general candidate
+- `ATG18R`: Number of votes for 2018 Republican attorney general candidate
+- `AUD18D`: Number of votes for 2018 Democratic Auditor candidate
+- `AUD18R`: Number of votes for 2018 Republican Auditor candidate
+- `AUD18O`: Number of votes for 2018 other party's Auditor candidate
+- `GOV18D`: Number of votes for 2018 Democratic gubernatorial candidate
+- `GOV18R`: Number of votes for 2018 Republican gubernatorial candidate
+- `GOV18O`: Number of votes for 2018 other party's gubernatorial candidate
+- `PRE16D`: Number of votes for 2016 Democratic presidential candidate
+- `PRE16R`: Number of votes for 2016 Republican presidential candidate
+- `PRE16O`: Number of votes for 2016 other party's presidential candidate
+- `PRE20D`: Number of votes for 2020 Democratic presidential candidate
+- `PRE20R`: Number of votes for 2020 Republican presidential candidate
+- `PRE20O`: Number of votes for 2020 other party's presidential candidate
+- `SOS18D`: Number of votes for 2018 Democratic Secretary of State candidate
+- `SOS18R`: Number of votes for 2018 Republican Secretary of State candidate
+- `SOS18O`: Number of votes for 2018 other party's Secretary of State candidate
+- `TRE18D`: Number of votes for 2018 Democratic Treasurer candidate
+- `TRE18R`: Number of votes for 2018 Republican Treasurer candidate
+- `USS16D`: Number of votes for 2016 Democratic senate candidate
+- `USS16R`: Number of votes for 2016 Republican senate candidate
+- `USS16O`: Number of votes for 2016 other party's senate candidate
+- `USS18D`: Number of votes for 2018 Democratic senate candidate
+- `USS18R`: Number of votes for 2018 Republican senate candidate
+- `USS18O`: Number of votes for 2018 other party's senate candidate
 
-## Projection
-This shapefile uses a NAD83(Harn)/UTM zone 17 North projection (EPSG:3747).
