@@ -8,7 +8,7 @@ Use of this project is further governed by the terms of the [Creative Commons At
 This shapefile was processed by Professor Ellen Veomett and her student Ananya Agarwal using the corresponding jupyter notebook.  As part of the cleaning process, precincts were nested within counties and small rook adjacencies (under 30 m) were changed to queen adjacencies.
 
 # **Sources**
-@author: eveomett AI for Redistricting, USF All data retrieved 05/29/24:
+All data retrieved 05/29/24:
 
 Obtain the following data from Restricting Data Hub
 
